@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>S.M.Dakshin Sai - Portfolio</title>
+    <style>
+        body {
+            font-family: Courier, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 40px;
+            line-height: 1.7;
+        }
+
+        /* Password Screen */
+        .password-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        input[type="password"] {
+            padding: 15px;
+            font-size: 18px;
+            width: 320px;
+            border: 2px solid black;
+            margin: 15px 0;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error { 
+            color: red; 
+            margin-top: 10px; 
+            font-weight: bold; 
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+        }
+
+        /* Grey Header Tabs - This is what you wanted */
+        .tabs {
+            background-color: #d0d0d0;     /* Grey background for tab bar */
+            padding: 15px 0;
+            border-bottom: 3px solid black;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .tab-button {
+            background-color: #b8b8b8;     /* Grey buttons */
+            border: 2px solid black;
+            padding: 12px 25px;
+            font-family: Courier, sans-serif;
+            font-size: 17px;
+            cursor: pointer;
+            margin: 0 8px;
+            transition: all 0.3s;
+        }
+        .tab-button:hover {
+            background-color: #a0a0a0;
+        }
+        .tab-button.active {
+            background-color: black;
+            color: white;
+            border-color: black;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+            width: 40%;
+        }
+
+        img {
+            display: block;
+            margin: 15px auto;
+            border: 2px solid black;
+        }
+        .profile-photo {
+            max-width: 280px;
+            border-radius: 8px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 25px 0;
+        }
+        .cert-item img {
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+        }
+        .cert-item h3 {
+            text-align: center;
+            margin: 10px 0 8px 0;
+        }
+
+        .divider {
+            border: 0;
+            height: 2px;
+            background: black;
+            margin: 55px 0 35px 0;
+        }
+
+        a { color: blue; }
+        .pdf-link { font-weight: bold; color: darkred; }
+    </style>
+</head>
+<body>
+
+    <!-- Password Screen -->
+    <div id="passwordScreen" class="password-screen">
+        <h2>🔒 Access Restricted</h2>
+        <p>Enter password to view S.M. Dakshin Sai's Portfolio</p>
+        <input type="password" id="passInput" placeholder="Enter password" autofocus>
+        <button onclick="checkPassword()">Enter</button>
+        <p id="errorMsg" class="error"></p>
+    </div>
+
+    <h1>Welcome to myportfolio.com</h1>
+
+    <!-- Grey Header Tabs -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'Home')">Homepage</button>
+        <button class="tab-button" onclick="openTab(event, 'About')">About Me</button>
+        <button class="tab-button" onclick="openTab(event, 'Goals')">Dream Goals</button>
+        <button class="tab-button" onclick="openTab(event, 'Projects')">Projects</button>
+        <button class="tab-button" onclick="openTab(event, 'Certificates')">Certificates</button>
+        <button class="tab-button" onclick="openTab(event, 'Marks')">Board Marks</button>
+    </div>
+
+    <!-- Homepage Tab -->
+    <div id="Home" class="tab-content active">
+        <h2 style="text-align:center;">Welcome to My Simple Portfolio</h2>
+        <p style="text-align:center; font-size:18px;">Hi, I'm S.M. Dakshin Sai.<br>
+        This is my honest no-fancy website made for college applications.<br>
+        Feel free to explore my journey, dreams and achievements.</p>
+        <p style="text-align:center;">Email: <a href="mailto:smdakshinsai@gmail.com">smdakshinsai@gmail.com</a></p>
+    </div>
+
+    <!-- About Me Tab -->
+    <div id="About" class="tab-content">
+        <h2>About Me</h2>
+        <p>I am a student passionate about science and engineering and I want to make a difference in the world. I am eager to contribute to the development of war technology and help in the security of countries and also make weapons which benefit space travel.</p>
+       
+        <h3 style="text-align:center;">My Photo</h3>
+        <img src="me.jpeg" alt="S.M. Dakshin Sai" class="profile-photo">
+        <p style="text-align:center; font-size:14px;">(Replace with your actual photo file name if needed)</p>
+
+        <h3 style="text-align:center;">Personal Information</h3>
+        <table>
+            <tr><th>Full Name</th><td>S.M. Dakshin Sai</td></tr>
+            <tr><th>Age</th><td>16 years</td></tr>
+            <tr><th>School Name</th><td>Padma Seshadri Bala Bhavan Senior Secondary School, KKnagar</td></tr>
+            <tr><th>Board</th><td>CBSE</td></tr>
+            <tr><th>Location</th><td>Chennai, Tamil Nadu</td></tr>
+            <tr><th>Email</th><td><a href="mailto:smdakshinsai@gmail.com">smdakshinsai@gmail.com</a></td></tr>
+            <tr><th>Passionate About</th><td>STEM, Space Technology, Defence & Engineering</td></tr>
+        </table>
+    </div>
+
+    <!-- Dream Goals Tab -->
+    <div id="Goals" class="tab-content">
+        <h2>My Dream Goals</h2>
+        <p>Ever since I was young, I have been deeply fascinated by technology that can protect nations and explore the unknown universe. I strongly believe that the future of humanity lies in intelligent systems and advanced engineering. Here are the two big projects that I am extremely passionate about and want to bring to life one day:</p>
+       
+        <ul>
+            <li><strong>PROJECT NEXUS SWARM</strong><br>
+            This is my vision of an AI hive-mind system combined with self-replicating and self-building robots...</li>
+            <br>
+            <li><strong>PROJECT UchūGo (Space Debris Cleaner)</strong><br>
+            Space is getting dangerously crowded with debris moving at insane speeds. My project aims to invent smart, safe machinery...</li>
+        </ul>
+       
+        <p style="font-style:italic; text-align:center;">These dreams fuel me every single day. I am ready to work hard and turn them into reality through higher studies and research.</p>
+    </div>
+
+    <!-- Projects Tab -->
+    <div id="Projects" class="tab-content">
+        <h1>Upcoming Projects</h1>
+            <h2>Wall Projected AI Assistant</h2>
+            <p>This project is about creating an AI assistant that can be projected onto walls for interactive experiences.</p>
+            <p>Materials Used: Raspberry Pi, Projector, Microphone, Speakers, Python</p>
+            <h2>AI Face Recognition System</h2>
+            <p>This project involves developing an AI system capable of recognizing and verifying faces in real-time.</p>
+            <p>Materials Used: Raspberry Pi, Camera, Python, OpenCV</p>
+    </div>
+
+    <!-- Certificates Tab -->
+    <div id="Certificates" class="tab-content">
+        <h2>STEM Certificates</h2>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <h3>SRM College's TECHNOMANIA 25-26, Participation Certificate</h3>
+                <img src="technomania.jpeg" alt="Technomania Certificate">
+            </div>
+            <div class="cert-item">
+                <h3>IIT-Madras DIY project course certificate</h3>
+                <img src="IIT-M.jpg" alt="IIT Madras Certificate">
+            </div>
+            <div class="cert-item">
+                <h3>Camo K-12 participation certificate</h3>
+                <img src="camp k12.png" alt="Camo K12 Certificate">
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2>Other Certificates (Sports, Arts, etc.)</h2>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <h3>Trinity Musical College, London - Grade 1 Electronic Keyboard</h3>
+                <img src="music.jpeg" alt="Music Certificate">
+            </div>
+            <div class="cert-item">
+                <h3>Karate Grade 3 completion certificate</h3>
+                <img src="karate.jpeg" alt="Karate Certificate">
+            </div>
+        </div>
+    </div>
+
+    <!-- Board Marks Tab -->
+    <div id="Marks" class="tab-content">
+        <h2>10th Board Exam Results</h2>
+        <p><strong>View Original Marksheet:</strong> <a href="10th marksheet.pdf" class="pdf-link" target="_blank"> Download 10th Marksheet PDF</a></p>
+        <p><strong>View Migration Certificate:</strong> <a href="10th migration certificate.pdf" class="pdf-link" target="_blank"> Download 10th Migration Certificate PDF</a></p>
+        <table>
+            <tr><th>Particulars</th><th>Details</th></tr>
+            <tr><td>School Name</td><td>Padma Seshadri Bala Bhavan Senior Secondary School, KKnagar</td></tr>
+            <tr><td>Board</td><td>CBSE</td></tr>
+            <tr><td>Year</td><td>2023-2024</td></tr>
+            <tr><td>Percentage / CGPA</td><td>93.20%</td></tr>
+        </table>
+
+        <h2>12th Board Exam Results</h2>
+        <p><strong>View Original Marksheet:</strong> <a href="12th-marksheet.pdf" class="pdf-link" target="_blank"> Download 12th Marksheet PDF</a></p>
+        <p><strong>View Migration Certificate:</strong> <a href="12th migration.pdf" class="pdf-link" target="_blank"> Download 12th Migration Certificate PDF</a></p>
+        <table>
+            <tr><th>Particulars</th><th>Details</th></tr>
+            <tr><td>School Name</td><td>Padma Seshadri Bala Bhavan Senior Secondary School, KKnagar</td></tr>
+            <tr><td>Board</td><td>CBSE</td></tr>
+            <tr><td>Year</td><td>2026-2027</td></tr>
+            <tr><td>Percentage / CGPA</td><td>XX.X % / X.X</td></tr>
+        </table>
+    </div>
+
+    <footer style="text-align: center; margin-top: 80px; font-size: 0.9em;">
+        S.M. Dakshin Sai • Prepared with passion for College Applications - 2027
+    </footer>
+
+    <script>
+        const correctPassword = "rubberducky12345";
+
+        function checkPassword() {
+            const input = document.getElementById("passInput").value.trim();
+            const errorMsg = document.getElementById("errorMsg");
+
+            if (input === correctPassword) {
+                document.getElementById("passwordScreen").style.display = "none";
+            } else {
+                errorMsg.textContent = "Incorrect password. Please try again.";
+                document.getElementById("passInput").value = "";
+            }
+        }
+
+        function openTab(evt, tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        document.getElementById("passInput").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") checkPassword();
+        });
+    </script>
+
+</body>
+</html>
